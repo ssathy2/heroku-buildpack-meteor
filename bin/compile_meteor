@@ -50,6 +50,10 @@ build() {
   (
     head "Building Meteor App Bundle"
     cd $APP_SOURCE
+    
+    head "Create package directory"
+    mkdir .meteor/packages
+    
     # can't build with these platforms enabled, it looks like
     set +e  # these next few are allowed to exit nonzero
     grep -Fxq ios .meteor/platforms
